@@ -1,0 +1,52 @@
+DATASET INFORMATION
+===================
+
+Name:        Steam Games sales Dataset
+Platform:    Kaggle
+Author:      armaanmanwatkar (Kaggle username)
+Link:        https://www.kaggle.com/datasets/armaanmanwatkar/steam-games-sales-dataset
+License:     MIT (as shown on the Kaggle dataset page)
+Accessed:    14 October 2026
+File used:   steam-games.csv
+             (other files in the Kaggle download, e.g. vgsales.csv, were not used)
+
+steam-games.csv is included in this folder. Original source: the link above.
+Place steam-games.csv at the path set in DATA_PATH in the notebook.
+
+SIZE
+----
+Raw file:               42,497 rows x 24 columns
+After removing rows with no review label (overall_review missing): 40,020 rows
+Duplicate rows / duplicate app_id: none found
+
+TARGET
+------
+overall_review (9 Steam levels), grouped into 3 classes as review_class:
+  Positive  (Overwhelmingly Positive, Very Positive, Positive, Mostly Positive)  28,905  (72.2%)
+  Mixed     (Mixed)                                                                 9,489  (23.7%)
+  Negative  (Mostly Negative, Negative, Very Negative, Overwhelmingly Negative)     1,626  ( 4.1%)
+
+FEATURES USED
+-------------
+11 original features: price, release year, genres, categories, DLC count,
+awards, age rating, Mac support, Linux support, developer, publisher.
+(win_support was dropped because it is almost constant: 99.9-100% True.)
+After encoding these became 56 model columns:
+price_log, is_free, dlc_log, has_dlc, awards_log, has_awards, mac_support,
+linux_support, age_rating, release_year, 12 genre columns, 32 category columns,
+developer_freq, publisher_freq.
+
+COLUMNS NOT USED AS FEATURES
+----------------------------
+app_id, title, original_price, discount_percentage, content_descriptor,
+about_description, overall_review_%, overall_review_count, recent_review,
+recent_review_%, recent_review_count (the review-score columns describe the
+outcome and would leak the target).
+
+NOTES
+-----
+- Prices in the file are in Indian rupees (Rs). "Free" is stored as text and was converted to 0.
+- original_price and discount_percentage are present for only 4,859 games, so the
+  discounted_price column was used as the price feature.
+- dlc_available appears capped at 200 in the source.
+- release_date mixes two text formats ("6 Dec, 2019" and "Oct 2010"); 27 dates are missing.

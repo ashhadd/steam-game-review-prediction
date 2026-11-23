@@ -1,0 +1,14 @@
+1. Dataset source (Kaggle, MIT license):
+   https://www.kaggle.com/datasets/armaanmanwatkar/steam-games-sales-dataset
+
+2. Presentation (Google Drive):
+   https://drive.google.com/file/d/1PnXMbZiR3iblOj0d-lh7SC4vDhBOnD9t/view?usp=sharing
+
+3. Project presentation video (Google Drive, restricted to teacher):
+   [PASTE VIDEO LINK HERE]
+
+4. GitHub repository:
+   https://github.com/ashhadd/steam-game-review-prediction
+
+5. Other links:
+   Live demo (Streamlit app): https://steam-review-predictor.streamlit.app/
